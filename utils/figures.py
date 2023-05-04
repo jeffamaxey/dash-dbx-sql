@@ -40,7 +40,7 @@ def generate_scatter(df, xaxis, comp):
         color_discrete_sequence=custom_color[comp],
         size="Total",
         labels={xaxis: axis_labels[xaxis]},
-        title=f"Comparative Risk by Demographic",
+        title="Comparative Risk by Demographic",
     )
     return fig_style(fig)
 
@@ -59,7 +59,7 @@ def generate_line(df, yaxis, comp):
         color_discrete_sequence=custom_color[comp],
         markers=True,
         labels={f"{yaxis}tot": axis_labels[yaxis]},
-        title=f"Comparative Daily Fitness Metrics by Demographic",
+        title="Comparative Daily Fitness Metrics by Demographic",
     )
     return fig_style(fig)
 

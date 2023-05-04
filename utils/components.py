@@ -22,19 +22,18 @@ def generate_usercomp(df, user, fitness):
     useridx = df.index[df["user_id"] == int(user)].to_list()[0]
     num_pat = len(df)
     if useridx == 0:
-        usercomp = dmc.Text(
+        return dmc.Text(
             f"Of the {num_pat} patients in the study, Patient {user} had the lowest total {fitness.lower()}"
         )
     elif useridx == num_pat - 1:
-        usercomp = dmc.Text(
+        return dmc.Text(
             f"Of the {num_pat} patients in the study, Patient {user} had the highest total {fitness.lower()}"
         )
     else:
         percentile = round((useridx + 1) / num_pat * 100, 2)
-        usercomp = dmc.Text(
+        return dmc.Text(
             f"Patient  had higher total {fitness.lower()} than {percentile}% of the {num_pat} patients in the study"
         )
-    return usercomp
 
 
 def notification_user(text):
